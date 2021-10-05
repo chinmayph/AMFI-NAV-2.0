@@ -17,7 +17,10 @@ for line in handle:
     words = line.split(';')
     if len(words) < 2: continue
     SchemeName = words[3]
-    NAV = words[4]
+    try:
+        NAV = float(words[4])
+    except:
+        NAV = words[4]
     Date = words[5]
     sheet.append([SchemeName, NAV, Date])
     
